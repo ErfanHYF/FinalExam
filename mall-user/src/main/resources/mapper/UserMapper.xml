@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ncu.edu.cn.mall.user.mapper.UserMapper">
+
+    <select id="selectAllUser" resultType="ncu.edu.cn.mall.user.bean.UserInfo">
+        select * from userinfo
+    </select>
+
+    <select id="selectPasswordByID" resultType="ncu.edu.cn.mall.user.bean.UserInfo">
+        select * from userinfo where id = #{id};
+    </select>
+</mapper>

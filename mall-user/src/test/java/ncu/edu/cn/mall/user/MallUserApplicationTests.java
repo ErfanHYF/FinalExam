@@ -1,13 +1,13 @@
-package ncu.edu.cn.mall;
+package ncu.edu.cn.mall.user;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MallApplicationTests {
+class MallUserApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
