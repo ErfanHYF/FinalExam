@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String register(String id, String password, String birthday, String nickname, String name, String address, String telephone) {
+    public int register(String id, String password, String birthday, String nickname, String name, String address, String telephone) {
         return userMapper.register(id,password,birthday,nickname,name,address,telephone);
     }
 }

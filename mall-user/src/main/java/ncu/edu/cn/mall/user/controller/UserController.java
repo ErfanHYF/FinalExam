@@ -34,7 +34,11 @@ public class UserController {
         return "/login/login";
     }
 
-//    value = "/loginPage", method = {RequestMethod.POST, RequestMethod.GET}
+    @RequestMapping(value = "/register.html", method = {RequestMethod.POST, RequestMethod.GET})
+    public String register() {
+        return "/login/register";
+    }
+
     @RequestMapping(value = "/loginPage", method = {RequestMethod.POST, RequestMethod.GET})
     public String login(HttpServletRequest request, HttpSession session) {
         String id = request.getParameter("id");
@@ -52,17 +56,34 @@ public class UserController {
         }
     }
 
-//    @RequestMapping("register")
-//    public String register(HttpServletRequest request, HttpSession session){
-//        String id = request.getParameter("id");
-//        String password = request.getParameter("password");
-//
-//    }
+    @RequestMapping(value = "/registerPage", method = {RequestMethod.POST, RequestMethod.GET})
+    public String register(HttpServletRequest request, HttpSession session){
+        String id = request.getParameter("id");
+        String password = request.getParameter("password");
+        String birthday = request.getParameter("birthday");
+        String nickname = request.getParameter("nickname");
+        String name = request.getParameter("name");
+        String address = request.getParameter("address");
+        String telephone = request.getParameter("telephone");
+        int result = userService.register(id,password,birthday,nickname,name,address,telephone);
+        session.setAttribute("result",result+" row affected");
+        if(result == 1){
+            System.out.println("success");
+            return "/login/rtest";
+        }else{
+            System.out.println("error");
+            return "redirect:/";
+        }
+    }
 
     @RequestMapping(value = "/index", method = {RequestMethod.POST, RequestMethod.GET})
     public String loginindex() {
         return "/login/test";
 
     }
+    @RequestMapping(value = "/index1", method = {RequestMethod.POST, RequestMethod.GET})
+    public String registerindex() {
+        return "/login/rtest";
 
+    }
 }

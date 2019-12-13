@@ -12,8 +12,8 @@ public interface UserMapper {
     String selectPasswordByID(String id);
     @Select("select id from userinfo where id=#{id} and password=#{password}")
     public String login(@Param("id") String id, @Param("password") String password);
-    @Insert("insert into userinfo values(#{id},#{password},0,#{birthday},#{nickname},#{name},#{addrress},#{telephone})")
-    public String register(@Param("id") String id,@Param("password") String password,@Param("birthday") String birthday,
+    @Insert("insert into userinfo values(#{id},#{password},0,#{birthday},#{nickname},#{name},#{address},#{telephone})")
+    public int register(@Param("id") String id,@Param("password") String password,@Param("birthday") String birthday,
                            @Param("nickname") String nickname,@Param("name") String name,@Param("address") String address,
                            @Param("telephone") String telephone);
 

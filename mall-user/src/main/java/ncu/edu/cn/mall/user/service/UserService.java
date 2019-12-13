@@ -8,6 +8,6 @@ public interface UserService {
     List<UserInfo> getAllUser();
     String getPasswordByID(String id);
     String login(String id, String password);
-    String register(String id,String password,String birthday,String nickname,String name,String address,
+    int register(String id,String password,String birthday,String nickname,String name,String address,
                     String telephone);
 }
