@@ -4,9 +4,11 @@ import ncu.edu.cn.mall.user.bean.UserInfo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface UserMapper {
     List<UserInfo> selectAllUser();
     String selectPasswordByID(String id);
